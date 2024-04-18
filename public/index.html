@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with VitalWell</title>
+</head>
+<body>
+    <h1>Chat with VitalWell</h1>
+    <form id="chatForm">
+        <input type="text" id="messageInput" placeholder="Type your message" required>
+        <button type="submit">Send</button>
+    </form>
+    <div id="chatArea"></div>
+
+    <script src="chat.js"></script>
+</body>
+<body>
+    <h1>Upload Image for OCR</h1>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="performOCR()">Perform OCR</button>
+    <p id="ocrResult">OCR results will appear here...</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.1"></script>
+    <script src="app.js"></script>
+</body>
+</html>
