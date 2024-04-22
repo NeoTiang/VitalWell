@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with VitalWell</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ece5dd;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            background-color: #075E54;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0;
+        }
+        #chatForm {
+            display: flex;
+            background-color: #f0f0f0;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #messageInput {
+            flex-grow: 1;
+            margin-right: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1da851;
+        }
+        #chatArea {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+            margin-bottom: 60px; /* Same height as #chatForm */
+        }
+        #ocrSection {
+            background-color: #fff;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with VitalWell</h1>
+    <div id="chatArea">Messages will appear here...</div>
+    <form id="chatForm">
+        <input type="text" id="messageInput" placeholder="Type your message here..." required>
+        <button type="submit">Send</button>
+    </form>
+
+    <h1>Upload Image for OCR</h1>
+    <div id="ocrSection">
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="performOCR()">Perform OCR</button>
+        <p id="ocrResult">OCR results will appear here...</p>
+    </div>
+
+    <script src="chat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.1"></script>
+    <script src="app.js"></script>
+</body>
+</html>
